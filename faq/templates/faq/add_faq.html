@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add FAQ</title>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+</head>
+<body>
+    <h2>Add FAQ</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        CKEDITOR.replace('id_answer');
+    </script>
+</body>
+</html>
