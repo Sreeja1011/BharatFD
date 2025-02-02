@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.cache import cache
@@ -11,10 +10,8 @@ class FAQ(models.Model):
     question = models.TextField(help_text="Default question in English.")
     answer = RichTextField(help_text="Answer with rich text formatting.")
 
-    # Pre-generated translations (optional; can be blank initially)
     question_hi = models.TextField(blank=True, null=True, help_text="Question in Hindi")
     question_bn = models.TextField(blank=True, null=True, help_text="Question in Bengali")
-    # You can add more language fields as needed
 
     def get_translated_question(self, lang: str = "en") -> str:
         """Return the translated question for the requested language."""

@@ -20,5 +20,4 @@ def generate_translations(sender, instance: FAQ, created, **kwargs):
         updated = True
 
     if updated:
-        # Avoid recursion by updating only specific fields.
         instance.save(update_fields=["question_hi", "question_bn"])
